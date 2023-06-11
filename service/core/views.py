@@ -46,7 +46,7 @@ def question_api(request):
 
     elif request.method == 'POST':
         try:
-            if type(question_num=request.data['questions_num']) is not 'int':
+            if type(int(request.data['questions_num'])) is not 'int':
                 return Response(['Введён неверный тип данных'], status=status.HTTP_400_BAD_REQUEST)
             questions_number: int = request.data['questions_num']
         except:
